@@ -27,8 +27,11 @@ To run this project execute
 ### CLI
 
 ```bash
-
+mix setup # install and setup dependencies
+mix phx.server # start Phoenix endpoint
 ```
+
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ### With Docker
 
@@ -48,4 +51,3 @@ To run this project execute
 ## License
 
 [MIT](./LICENSE)
-
