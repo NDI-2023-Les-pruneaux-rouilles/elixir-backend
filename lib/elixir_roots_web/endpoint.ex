@@ -7,7 +7,7 @@ defmodule ElixirRootsWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_elixir_roots_key",
-    signing_salt: "uYDWwrGn",
+    signing_salt: "xX2Xq46s",
     same_site: "Lax"
   ]
 

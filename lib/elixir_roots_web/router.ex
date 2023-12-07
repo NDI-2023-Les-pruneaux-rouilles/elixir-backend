@@ -1,12 +1,15 @@
 defmodule ElixirRootsWeb.Router do
   use ElixirRootsWeb, :router
 
-  pipeline :api do
+  pipeline :cdn do
     plug :accepts, ["json"]
   end
 
-  scope "/api", ElixirRootsWeb do
-    pipe_through :api
+  scope "/cdn", ElixirRootsWeb do
+    pipe_through :cdn
+
+    resources "/images", ImagesController, only: [:create, :show]
+    resources "/videos", VideosController, only: [:create, :show]
   end
 
   # Enable LiveDashboard in development
