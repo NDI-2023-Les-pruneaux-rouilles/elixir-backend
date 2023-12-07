@@ -16,6 +16,7 @@ This project aims to develop a backend system using Elixir for a Content Deliver
 
 - CDN
 - Generation of ecological facts based on real facts and numbers
+
 ## Tech Stack
 
 **Server:** [Elixir](https://elixir-lang.org/), [Phoenix](https://www.phoenixframework.org/)

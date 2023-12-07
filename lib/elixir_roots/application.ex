@@ -10,12 +10,14 @@ defmodule ElixirRoots.Application do
     children = [
       ElixirRootsWeb.Telemetry,
       ElixirRoots.Repo,
+      {Ecto.Migrator,
+        repos: Application.fetch_env!(:elixir_roots, :ecto_repos),
+        skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:elixir_roots, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ElixirRoots.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: ElixirRoots.Finch},
       # Start a worker by calling: ElixirRoots.Worker.start_link(arg)
       # {ElixirRoots.Worker, arg},
+      {Cachex, name: :cdn_cache},
       # Start to serve requests, typically the last entry
       ElixirRootsWeb.Endpoint
     ]
@@ -32,5 +34,10 @@ defmodule ElixirRoots.Application do
   def config_change(changed, _new, removed) do
     ElixirRootsWeb.Endpoint.config_change(changed, removed)
     :ok
+  end
+
+  defp skip_migrations?() do
+    # By default, sqlite migrations are run when using a release
+    System.get_env("RELEASE_NAME") != nil
   end
 end

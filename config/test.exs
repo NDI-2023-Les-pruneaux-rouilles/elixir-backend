@@ -6,25 +6,16 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :elixir_roots, ElixirRoots.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "elixir_roots_test#{System.get_env("MIX_TEST_PARTITION")}",
-  pool: Ecto.Adapters.SQL.Sandbox,
-  pool_size: 10
+  database: Path.expand("../elixir_roots_test.db", Path.dirname(__ENV__.file)),
+  pool_size: 5,
+  pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :elixir_roots, ElixirRootsWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "S+vbG5SAD/N1UhFYBNyqj31AfdDQtE9/VvHGAU8Cn6Sn7qYctW/zfyALfoGiGNpk",
+  secret_key_base: "lrCueT7S8HV2n8SzGrRiGMR44YIPFq89e+M/a55fEztyrbCeg2ICFw0bd8pboXKG",
   server: false
-
-# In test we don't send emails.
-config :elixir_roots, ElixirRoots.Mailer, adapter: Swoosh.Adapters.Test
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
 
 # Print only warnings and errors during test
 config :logger, level: :warning
