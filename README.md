@@ -8,6 +8,10 @@ This project aims to develop a backend system using Elixir for a Content Deliver
 - [@joxcat](https://www.github.com/joxcat)
 - [@julien-cpsn](https://www.github.com/Julien-cpsn)
 
+## Subjects choosen for this part
+- https://www.nuitdelinfo.com/inscription/defis/388
+- https://www.nuitdelinfo.com/inscription/defis/422
+
 ## Features
 
 - CDN
