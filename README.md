@@ -14,12 +14,17 @@ This project aims to develop a backend system using Elixir for a Content Deliver
 
 ## Features
 
-- CDN
-- Generation of ecological facts based on real facts and numbers
+- [x] Image CDN
+- [ ] Video CDN
+- [ ] Generation of ecological facts based on real facts and numbers
 
 ## Tech Stack
 
-**Server:** [Elixir](https://elixir-lang.org/), [Phoenix](https://www.phoenixframework.org/)
+**Server:** [Elixir](https://elixir-lang.org/), [Phoenix](https://www.phoenixframework.org/)  
+
+**File Hash:** [Blake3](https://github.com/BLAKE3-team/BLAKE3/)  
+
+**Tools:** [ffmpeg](https://ffmpeg.org/), [mogrify](https://imagemagick.org/script/mogrify.php)
 
 ## Deployment
 
