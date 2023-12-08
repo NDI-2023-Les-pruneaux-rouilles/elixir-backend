@@ -34,20 +34,44 @@ mix phx.server # start Phoenix endpoint
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-### With Docker
-
 ## API Reference
 
-#### Get all items
+#### Upload image to CDN
 
 ```http
-  GET /api/items
+  POST /cdn/images (multipart/form-data)
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+|  `file`   | `upload` | **Required**. Your file to upload |
 
+##### Returns
+```json
+{"filename":"<file name>","hash":"<blake3 hash>"}
+```
+
+#### Get optimized image from CDN (cached) by name
+
+```http
+  GET /cdn/images/:name?max_size= (E.G test.jpg)
+```
+
+| Parameter   | Type     | Description                       |
+| :---------- | :------- | :-------------------------------- |
+|  `name`     | `string` | **Required**. Your file name      |
+|  `max_size` | `string` | The max size the file must be     |
+
+#### Get optimized image from CDN (cached) by hash (blake3)
+
+```http
+  GET /cdn/images/by-hash/:hash?max_size=
+```
+
+| Parameter   | Type     | Description                       |
+| :---------- | :------- | :-------------------------------- |
+|  `hash`     | `string` | **Required**. Your file hash      |
+|  `max_size` | `string` | The max size the file must be     |
 
 ## License
 
