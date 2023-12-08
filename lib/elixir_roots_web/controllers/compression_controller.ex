@@ -9,6 +9,7 @@ defmodule ElixirRootsWeb.CompressionController do
   def compress(image, max_size, max_try \\ 10) do
     file_size = File.stat!(image.path()).size
     shrink_delta = min(max_size * 1000 / file_size, 1)
+    # Shrink factor is variable to reduce the number of tries to attain the max_size needed
     shrink_factor = cond do
       shrink_delta >= 1 -> 1
       shrink_delta < 0.5 -> 0.65
@@ -19,6 +20,7 @@ defmodule ElixirRootsWeb.CompressionController do
 
     cond do
       file_size <= max_size * 1000 -> image
+      # We tried enough, no need
       max_try == 0 -> image
       true ->
         %{width: image_width, height: image_height} = Mogrify.identify(image.path())

@@ -47,6 +47,7 @@ defmodule ElixirRoots.MixProject do
       {:mogrify, "~> 0.9.3" }, # Compressing images
       {:blake3, "~> 1.0"}, # Hashing files
       {:temp, "~> 0.4"}, # Temporary files
+      {:corsica, "~> 2.1.3"}, # Support of CORS
       # {:open_api_spex, "~> 3.4"}, # OpenAPI / Swagger
     ]
   end
