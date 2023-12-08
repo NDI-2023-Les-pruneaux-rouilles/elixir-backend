@@ -39,12 +39,15 @@ defmodule ElixirRoots.MixProject do
       {:phoenix_live_dashboard, "~> 0.8.2"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
-      {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, ">= 0.0.0"},
-      {:cachex, "~> 3.6"},
-      {:ffmpex, "~> 0.10.0"}
+      {:cachex, "~> 3.6"}, # File cache
+      {:ffmpex, "~> 0.10.0"}, # Compressing videos
+      {:mogrify, "~> 0.9.3" }, # Compressing images
+      {:blake3, "~> 1.0"}, # Hashing files
+      {:temp, "~> 0.4"}, # Temporary files
+      # {:open_api_spex, "~> 3.4"}, # OpenAPI / Swagger
     ]
   end
 

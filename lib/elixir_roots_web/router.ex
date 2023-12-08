@@ -8,8 +8,9 @@ defmodule ElixirRootsWeb.Router do
   scope "/cdn", ElixirRootsWeb do
     pipe_through :cdn
 
-    resources "/images", ImagesController, only: [:create, :show]
-    resources "/videos", VideosController, only: [:create, :show]
+    get "/images/by-hash/:hash", ImagesController, :show_by_hash
+    resources "/images", ImagesController, only: [:create, :show], param: "name"
+    resources "/videos", VideosController, only: [:create, :show], param: "name"
   end
 
   # Enable LiveDashboard in development

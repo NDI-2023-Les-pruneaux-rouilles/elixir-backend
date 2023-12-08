@@ -7,7 +7,7 @@ defmodule ElixirRootsWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_elixir_roots_key",
-    signing_salt: "xX2Xq46s",
+    signing_salt: "O/xoMxuW",
     same_site: "Lax"
   ]
 
@@ -20,7 +20,7 @@ defmodule ElixirRootsWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :elixir_roots,
-    gzip: false,
+    gzip: true,
     only: ElixirRootsWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the

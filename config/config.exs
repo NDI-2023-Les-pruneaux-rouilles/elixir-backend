@@ -20,7 +20,7 @@ config :elixir_roots, ElixirRootsWeb.Endpoint,
     layout: false
   ],
   pubsub_server: ElixirRoots.PubSub,
-  live_view: [signing_salt: "tu/jqAPL"]
+  live_view: [signing_salt: "WBXfFJtm"]
 
 # Configures Elixir's Logger
 config :logger, :console,

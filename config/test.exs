@@ -14,7 +14,7 @@ config :elixir_roots, ElixirRoots.Repo,
 # you can enable the server option below.
 config :elixir_roots, ElixirRootsWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "lrCueT7S8HV2n8SzGrRiGMR44YIPFq89e+M/a55fEztyrbCeg2ICFw0bd8pboXKG",
+  secret_key_base: "3Gr3AAl2rfLQsxdJugMJT6G2/uzml1IM6SUY2wiaZhaMuEaQw5us19PqU7t6UeKv",
   server: false
 
 # Print only warnings and errors during test

@@ -17,7 +17,8 @@ defmodule ElixirRoots.Application do
       {Phoenix.PubSub, name: ElixirRoots.PubSub},
       # Start a worker by calling: ElixirRoots.Worker.start_link(arg)
       # {ElixirRoots.Worker, arg},
-      {Cachex, name: :cdn_cache},
+      Supervisor.child_spec({Cachex, name: :cdn_cache}, id: :cdn_cache),
+      Supervisor.child_spec({Cachex, name: :cdn_index}, id: :cdn_index),
       # Start to serve requests, typically the last entry
       ElixirRootsWeb.Endpoint
     ]

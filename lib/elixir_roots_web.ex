@@ -42,7 +42,6 @@ defmodule ElixirRootsWeb do
         layouts: [html: ElixirRootsWeb.Layouts]
 
       import Plug.Conn
-      import ElixirRootsWeb.Gettext
 
       unquote(verified_routes())
     end

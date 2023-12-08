@@ -20,7 +20,7 @@ config :elixir_roots, ElixirRootsWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "jQgm2C1Sxt3+DzSDa4VZZ1VY0W49rv7IQwsV9GZnz6Oq1c0j/I/zLDet9SCmDPsq",
+  secret_key_base: "FBhFUg1INuTve1z7QoIh02yHz2xVvZ5UFsHJI6ZshABPuzk1l+UjrOJwI3kOQEGc",
   watchers: []
 
 # ## SSL Support
