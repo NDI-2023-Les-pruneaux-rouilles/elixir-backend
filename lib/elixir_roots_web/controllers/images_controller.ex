@@ -17,7 +17,7 @@ defmodule ElixirRootsWeb.ImagesController do
 
     conn
     |> put_status(200)
-    |> json(%{filename: upload.filename, hash: hash})
+    |> json(%{filename: upload.filename, hash: hash, url: "#{conn.scheme}://#{conn.host}:#{conn.port}/cdn/images/by-hash/#{hash}"})
   end
 
   def show(conn, params) do
