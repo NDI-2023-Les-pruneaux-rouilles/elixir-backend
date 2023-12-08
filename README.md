@@ -30,6 +30,15 @@ This project aims to develop a backend system using Elixir for a Content Deliver
 
 To run this project execute
 
+### Docker 
+
+```bash
+docker compose up --build
+```
+
+Server is now running on [`localhost:4000`](http://localhost:4000)
+
+
 ### CLI
 
 ```bash
@@ -37,7 +46,7 @@ mix setup # install and setup dependencies
 mix phx.server # start Phoenix endpoint
 ```
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Server is now running on [`localhost:4000`](http://localhost:4000)
 
 ## API Reference
 
